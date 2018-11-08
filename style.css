@@ -1,0 +1,38 @@
+#title {
+    text-align: center;
+    margin-top: 25%;
+}
+
+.box {
+    width: 100%;
+    text-align: center;
+}
+
+#show-search {
+    width: 200px;
+}
+
+#weather-icon {
+    margin-top: 25px;
+}
+
+#current-weather{
+    margin-top: -25px;
+}
+
+#box {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.box1 {
+    width: 50px;
+    display: table;
+    float: left;
+    text-align: center;
+    margin-left: 10px
+}
+
+.text {
+    margin-top: -10px;
+}

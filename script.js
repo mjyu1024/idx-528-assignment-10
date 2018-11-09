@@ -1,4 +1,5 @@
 let show_search = document.querySelector("#show-search");
+let btnSubmit = document.querySelector("#btnSubmit");
 let current_weather = document.querySelector("#current-weather");
 let weather_icon = document.querySelector("#weather-icon");
 let forcast01 = box.querySelector("#forcast01");
@@ -62,10 +63,10 @@ const getShowForcast5 = (data) => {
     forcast05_icon.src = `http://openweathermap.org/img/w/${image5}.png`;    
 };
 
-const searchInput = (event) => {
-    let userInput = event.target.value;
+const clickOnButton = (event) => {
+    let value = show_search.value;
 
-    let URL = `http://api.openweathermap.org/data/2.5/weather?q=${userInput}&APPID=25bc90a1196e6f153eece0bc0b0fc9eb`;
+    let URL = `http://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=25bc90a1196e6f153eece0bc0b0fc9eb`;
 
     fetch(URL)
          .then( (response) => { return response.json(); } )
@@ -73,35 +74,35 @@ const searchInput = (event) => {
          .then()
 
  
-    let URL1 = `http://api.openweathermap.org/data/2.5/forecast?q=${userInput}&APPID=25bc90a1196e6f153eece0bc0b0fc9eb`;
+    let URL1 = `http://api.openweathermap.org/data/2.5/forecast?q=${value}&APPID=25bc90a1196e6f153eece0bc0b0fc9eb`;
 
     fetch(URL1)
          .then( (response) => { return response.json(); } )
          .then( getShowForcast1 )
          .then()   
 
-    let URL2 = `http://api.openweathermap.org/data/2.5/forecast?q=${userInput}&APPID=d3cfde203de9c80b7b1bab1e8e60ab91`;
+    let URL2 = `http://api.openweathermap.org/data/2.5/forecast?q=${value}&APPID=d3cfde203de9c80b7b1bab1e8e60ab91`;
 
     fetch(URL2)
          .then( (response) => { return response.json(); } )
          .then( getShowForcast2 )
          .then() 
 
-    let URL3 = `http://api.openweathermap.org/data/2.5/forecast?q=${userInput}&APPID=fe3aa2c2a09c1550bb84707e6ee2be75`;
+    let URL3 = `http://api.openweathermap.org/data/2.5/forecast?q=${value}&APPID=fe3aa2c2a09c1550bb84707e6ee2be75`;
 
     fetch(URL3)
          .then( (response) => { return response.json(); } )
          .then( getShowForcast3 )
          .then()   
 
-    let URL4 = `http://api.openweathermap.org/data/2.5/forecast?q=${userInput}&APPID=93183b9354abfb215d9c565e9c6fd726`;
+    let URL4 = `http://api.openweathermap.org/data/2.5/forecast?q=${value}&APPID=93183b9354abfb215d9c565e9c6fd726`;
 
     fetch(URL4)
          .then( (response) => { return response.json(); } )
          .then( getShowForcast4 )
          .then()  
 
-    let URL5 = `http://api.openweathermap.org/data/2.5/forecast?q=${userInput}&APPID=a454a2728155fbb6430895d8d4f88fc7`;
+    let URL5 = `http://api.openweathermap.org/data/2.5/forecast?q=${value}&APPID=a454a2728155fbb6430895d8d4f88fc7`;
 
     fetch(URL5)
          .then( (response) => { return response.json(); } )
@@ -109,4 +110,4 @@ const searchInput = (event) => {
          .then()  
 };
 
-show_search.addEventListener("change", searchInput);
+btnSubmit.addEventListener("click", clickOnButton);
